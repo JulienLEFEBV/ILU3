@@ -63,5 +63,18 @@ public class JeuDeCartes {
 		}
 		return retour;
 	}
-
+	
+	public boolean checkCount() {
+		Carte[] cartes=donnerCartes();
+		int indiceCartes=0;
+		for(int i=0;i<typesDeCartes.length;i++) {
+			for(int j=0;j<typesDeCartes[i].getNbExemplaires();j++) {
+				if(indiceCartes>=cartes.length || !cartes[indiceCartes].equals(typesDeCartes[i].getCarte())) {
+					return false;
+				}
+				indiceCartes ++;
+			}
+		}
+		return true;
+	}
 }
