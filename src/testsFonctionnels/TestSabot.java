@@ -39,28 +39,19 @@ public class TestSabot {
 	}
 
 	// 4.2.c
-	public void questionC() {
-		Carte cartePiochee = sabot.piocher();
-		System.out.println("Je pioche " + cartePiochee);
-		for (Iterator<Carte> iterator = sabot.iterator(); iterator.hasNext();) {
-			Carte carte = null;
-			try {
-				carte= iterator.next();
+		public void questionC() {
+			Carte cartePiochee = sabot.piocher();
+			System.out.println("Je pioche " + cartePiochee);
+			for (Iterator<Carte> iterator = sabot.iterator(); iterator.hasNext();) {
+				Carte carte = iterator.next();
+				System.out.println("Je pioche " + carte);
+				iterator.remove();
+//				cartePiochee = sabot.piocher();
+//				sabot.ajouterCarte(new Botte(cartes.Type.ACCIDENT));
 			}
-			catch(IllegalStateException | ConcurrentModificationException | NoSuchElementException e) {
-				iterator = sabot.iterator();
-				if(e instanceof ConcurrentModificationException){
-					carte = iterator.next();
-				}
-			}
-			System.out.println("Je pioche " + carte);
-			iterator.remove();
-			sabot.ajouterCarte(new Botte(cartes.Type.ACCIDENT));
-			cartePiochee = sabot.piocher();
-		}
 		Iterator<Carte> iterator = sabot.iterator();
-		System.out.println("\nLa pioche contient encore des cartes ? " + iterator.hasNext());
-	}
+			System.out.println("\nLa pioche contient encore des cartes ? " + iterator.hasNext());
+		}
 
 	public static void main(String[] args) {
 		TestSabot testPioche = new TestSabot();

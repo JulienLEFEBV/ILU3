@@ -74,6 +74,7 @@ public class Sabot implements Iterable<Carte> {
 			throw new IllegalStateException("Limite max de cartes atteinte");
 		} else {
 			cartes[nbCartes] = carte;
+			nombreOperations++;
 			nbCartes++;
 		}
 	}
