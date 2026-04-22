@@ -11,5 +11,9 @@ public class Botte extends Probleme {
 		return super.getType().getBotte();
 	}
 	
+	@Override
+	public int hashCode() {
+	    return 67 * super.getType().hashCode();
+	}
 
 }

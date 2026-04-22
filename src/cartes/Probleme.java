@@ -20,4 +20,9 @@ public abstract class Probleme extends Carte {
 		}
 		return false;
 	}
+	
+//	@Override
+//	public int hashCode() {
+//	    return 67 * type.hashCode();
+//	}
 }

@@ -7,5 +7,8 @@ public abstract class Carte  {
 		return this.getClass().equals(obj.getClass());
 	}
 	
-	
+//	@Override
+//	public int hashCode() {
+//	    return 67 * getClass().hashCode();
+//	}
 }
