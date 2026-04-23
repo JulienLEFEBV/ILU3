@@ -25,7 +25,7 @@ public class MainJoueur  implements Iterable<Carte>{
 	public String toString() {
 		String affichage = "";
 		for(Carte carte : cartes) {
-			affichage+=carte;
+			affichage+=carte+" ";
 		}
 		return affichage;
 	}
